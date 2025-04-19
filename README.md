@@ -72,8 +72,8 @@ Mit diesem Code
 ```cpp
 IrSender.sendSony(0x6A49, 15)
 ```
-kann dann das AI-Tracking ausgelöst werden.
-Das nächste Projekt ist die Wiedergabe dieser Codes per IR-Sender (KY-005).
+kann z.B. die AI-Tracking-Funktion ausgelöst werden.
+Das nächste Ziel ist die Wiedergabe dieser Codes über das KY-005 IR-Sendermodul, um die Funktion per ESP32 fernzusteuern (z. B. über WLAN oder physische Taste bzw. ein elgato Streamdeck).
 
 ## 🔧 Abhängigkeiten
 - Arduino IDE ≥ 2.x
