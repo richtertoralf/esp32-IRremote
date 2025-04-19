@@ -1,7 +1,7 @@
 # esp32-IRremote
 
 Dieses Projekt zeigt, wie man mit einem **ESP32** und dem **AZ-Delivery KY-022 IR Receiver Modul (CHQ1838)** IR-Codes einer Fernbedienung auslesen kann – insbesondere zum Steuern einer PTZ-Kamera. Die erfassten IR-Codes können später mit einem **KY-005 IR-Sendemodul** wieder gesendet werden.
-Hauptsächlich geht es mir um das Aus- und Einschalten des **"AI Trackings"** meiner **HDKATOV PTZ Kamera**. Diese Funktion kann derzeit nur über einer Fernbedienung, nicht aber über die Weboberfläche remote erfolgen. Die chinesische Herstellerfirma war trotz mehrmaliger Nachfrage bisher nicht imstande, uns eine Auskunft zu geben, wie diese AI Tracking Funktion remote ohne Fernbedienung aktiviert und deaktiviert werden kann. Deswegen will ich mir eine Modul bauen, welches an der Kamera befestigt wird, um aus der Ferne, per Wifi, das AI Tracking ein- und auszuschalten.
+Hauptsächlich geht es mir um das Aus- und Einschalten des **"AI Trackings"** meiner **HDKATOV PTZ Kamera**. Diese Funktion kann derzeit nur über einer Fernbedienung, nicht aber über die Weboberfläche remote erfolgen. Die chinesische Herstellerfirma war trotz mehrmaliger Nachfrage bisher nicht imstande, uns eine Auskunft zu geben, wie diese AI Tracking Funktion remote ohne Fernbedienung aktiviert und deaktiviert werden kann. Deswegen will ich mir ein Modul bauen, welches an der Kamera befestigt wird, um aus der Ferne, per Wifi, das AI Tracking ein- und auszuschalten.
 
 ---
 
