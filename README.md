@@ -63,18 +63,16 @@ void loop() {
 |Rechts|0x51D1C|Sony|
 |Hoch|0x51D1A|Sony|
 |Runter|0x51D1B|Sony|
-|**AI Toggle (An/Aus)|0x6A49|Sony**|
+|AI Toggle (An/Aus)|0x6A49|Sony|
 
 **Die gleiche Taste auf der Fernbedienung wird verwendet, um die AI-Tracking-Funktion ein- und auszuschalten. Das entsprechende Signal (0x6A49, Sony-Protokoll) wird von der Kamera als Toggle-Befehl interpretiert.**
 
 ## 🧪 Weiteres
-Mit diesen Codes kann z. B. per IrSender.sendSony(0x6A49, 15); das AI-Tracking ausgelöst werden.
-Der nächste Schritt ist die Wiedergabe dieser Codes per IR-Sender (KY-005).
+Mit diesen Codes kann z. B. per **IrSender.sendSony(0x6A49, 15)**; das AI-Tracking ausgelöst werden.
+Das nächste Projekt ist die Wiedergabe dieser Codes per IR-Sender (KY-005).
 
 ## 🔧 Abhängigkeiten
-Arduino IDE ≥ 2.x
-
-IRremote Bibliothek (aktuelle Version von Armin Joachimsmeyer)
-
-ESP32-Boardmanager installiert (via Boardverwalter)
+- Arduino IDE ≥ 2.x
+- IRremote Bibliothek (aktuelle Version von Armin Joachimsmeyer)
+- ESP32-Boardmanager installiert (via Boardverwalter)
 
