@@ -68,7 +68,11 @@ void loop() {
 **Die gleiche Taste auf der Fernbedienung wird verwendet, um die AI-Tracking-Funktion ein- und auszuschalten. Das entsprechende Signal (0x6A49, Sony-Protokoll) wird von der Kamera als Toggle-Befehl interpretiert.**
 
 ## 🧪 Weiteres
-Mit diesen Codes kann z. B. per **IrSender.sendSony(0x6A49, 15)**; das AI-Tracking ausgelöst werden.
+Mit diesem Code 
+```cpp
+IrSender.sendSony(0x6A49, 15)
+```
+kann dann das AI-Tracking ausgelöst werden.
 Das nächste Projekt ist die Wiedergabe dieser Codes per IR-Sender (KY-005).
 
 ## 🔧 Abhängigkeiten
