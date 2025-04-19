@@ -58,6 +58,7 @@ void loop() {
 ## 📋 Erfasste IR-Codes (PTZ-Fernbedienung)
 
 |Taste|Code|Protokoll|
+|-----|----|---------|
 |Links|0x51D1D|Sony|
 |Rechts|0x51D1C|Sony|
 |Hoch|0x51D1A|Sony|
