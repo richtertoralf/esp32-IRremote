@@ -80,3 +80,64 @@ Das nächste Ziel ist die Wiedergabe dieser Codes über das KY-005 IR-Sendermodu
 - IRremote Bibliothek (aktuelle Version von Armin Joachimsmeyer)
 - ESP32-Boardmanager installiert (via Boardverwalter)
 
+## Update
+Die erfassten Codes werden leider mit dem **AZ-delovery KY-022 Set IR Receiver Infrared Receiver CHQ1838 Sensor Modul** nicht sauber gesendet. Deswegen habe ich in einem zweiten Schritt die Senderohdaten der Fernbedienung erfasst:
+```cpp
+#include <IRremote.hpp>
+
+#define IR_RECEIVE_PIN 15  // Dein Empfangspin (z. B. vom KY-022 Modul)
+
+void setup() {
+  Serial.begin(115200);
+  delay(200);
+  IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);
+  Serial.println("Starte RAW-Code-Empfang...");
+}
+
+void loop() {
+  if (IrReceiver.decode()) {
+    Serial.println("====== IR-Empfang (RAW) ======");
+    IrReceiver.printIRResultRawFormatted(&Serial); // gibt die rawbuf[]-Werte formatiert aus
+    IrReceiver.resume();
+    Serial.println();
+  }
+}
+```
+Damit bekomme ich solche Werte:
+```
+# für AI Tracking an/aus (Toggle):
+19:22:48.428 -> ====== IR-Empfang (RAW) ======
+19:22:48.428 -> rawData[32]: 
+19:22:48.428 ->  -20450
+19:22:48.428 ->  +2350,- 650
+19:22:48.428 ->  +1150,- 700 + 500,- 650 + 550,- 700 +1100,- 700
+19:22:48.428 ->  + 500,- 750 + 450,- 700 +1150,- 650 + 550,- 700
+19:22:48.428 ->  + 500,- 700 +1150,- 650 + 550,- 650 +1150,- 650
+19:22:48.428 ->  + 550,- 650 +1150,- 700 +1100
+19:22:48.428 -> Sum: 24650
+
+# für Kamera nach RECHTS:
+19:24:49.955 -> ====== IR-Empfang (RAW) ======
+19:24:49.955 -> rawData[42]: 
+19:24:49.955 ->  -14300
+19:24:49.955 ->  +2300,- 700
+19:24:49.955 ->  + 500,- 700 + 500,- 700 +1150,- 650 +1150,- 650
+19:24:49.955 ->  +1150,- 650 + 550,- 650 + 500,- 750 + 450,- 750
+19:24:49.955 ->  +1100,- 700 + 550,- 650 +1150,- 650 +1150,- 650
+19:24:49.955 ->  +1150,- 700 + 500,- 700 + 500,- 700 + 500,- 700
+19:24:49.987 ->  +1050,- 750 + 550,- 650 +1100,- 700 + 550
+19:24:49.987 -> Sum: 31850
+
+# für Kamera nach LINKS:
+19:25:16.610 -> ====== IR-Empfang (RAW) ======
+19:25:16.610 -> rawData[42]: 
+19:25:16.610 ->  -13650
+19:25:16.610 ->  +2400,- 600
+19:25:16.610 ->  +1200,- 650 + 550,- 600 +1200,- 650 +1200,- 600
+19:25:16.610 ->  +1150,- 650 + 550,- 650 + 600,- 600 + 600,- 600
+19:25:16.641 ->  +1200,- 650 + 550,- 650 +1150,- 600 +1200,- 650
+19:25:16.641 ->  +1150,- 650 + 550,- 650 + 550,- 650 + 550,- 700
+19:25:16.641 ->  +1150,- 650 + 550,- 650 +1150,- 650 + 550
+19:25:16.641 -> Sum: 32500
+```
+Damit konnte ich dann mit dem **AZ-Delivery KY-005 IR Infrared Emmission Sensor Modul** exakte Befehle senden :-)
